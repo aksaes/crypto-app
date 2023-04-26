@@ -1,5 +1,6 @@
 import React from 'react'
 import { Chart } from 'react-google-charts'
+import ClipLoader from "react-spinners/ClipLoader"
 
 const CryptoChart = ({ data }) => {
   const chartData = [['Symbol', 'Trading Count']]
@@ -23,7 +24,13 @@ const CryptoChart = ({ data }) => {
       <Chart
         width={'100%'}
         chartType="BarChart"
-        loader={<div>Loading Chart</div>}
+        loader={<ClipLoader 
+          size={30}
+          cssOverride={{
+            display: "block",
+            margin: "0 auto"
+          }}
+        />}
         data={chartData}
         options={options}
       />

@@ -21,7 +21,7 @@ const App = () => {
         <h1>Cyrpto Data</h1>
       </div>
       <CryptoForm data ={cryptoData} onSubmit={handleFormSubmit} />
-      <CryptoList data={cryptoData} />
+      { cryptoData.length > 0 && <CryptoList data={cryptoData} /> }
       { cryptoData.length > 0 && <CryptoChart data={cryptoData} /> }
     </div>
   )
